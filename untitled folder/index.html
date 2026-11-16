@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Purva is Turning 20! ✨ You're Invited ♡</title>
+  
+  <!-- Open Graph & WhatsApp Preview Metadata -->
+  <meta property="og:title" content="Poobie is Turning 20! ✨ Birthday Invitation">
+  <meta property="og:description" content="Saying no isn't an option. Join us to celebrate Purva (Poobie) on Nov 17th at Madras Taproom!">
+  <meta property="og:image" content="assets/poster_reference.jpg">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#FCEEF2">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Shrikhand&family=Outfit:wght@400;600;800;900&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💌</text></svg>">
+</head>
+<body class="initial-load">
+
+  <!-- AUDIO CONTROL TOGGLE -->
+  <aside class="audio-control-bar" aria-label="Audio controls">
+    <button id="soundToggleBtn" class="sound-toggle-btn" aria-label="Toggle sound effects" title="Toggle Sound">
+      <span class="sound-icon" id="soundIcon">🔇</span>
+      <span class="sound-text" id="soundText">Sound: Off</span>
+    </button>
+  </aside>
+
+  <!-- BACKGROUND PAPER TEXTURE & AMBIENT SPARKLES -->
+  <div class="ambient-stars-container" id="ambientStars" aria-hidden="true"></div>
+
+  <!-- =========================================================================
+       STAGE 1: THE OPENING EXPERIENCE — SEALED VINTAGE ENVELOPE
+       ========================================================================= -->
+  <section id="envelopeStage" class="envelope-stage active" aria-label="Sealed Birthday Invitation">
+    <div class="envelope-wrapper">
+      
+      <!-- Ambient Sparkles & Paper Dust around Envelope -->
+      <div class="envelope-aura" aria-hidden="true">
+        <span class="sparkle-dot sp-1">✦</span>
+        <span class="sparkle-dot sp-2">✧</span>
+        <span class="sparkle-dot sp-3">★</span>
+        <span class="sparkle-dot sp-4">♡</span>
+        <span class="sparkle-dot sp-5">✦</span>
+      </div>
+
+      <!-- Realistic 3D Vintage Envelope -->
+      <div class="envelope" id="envelopeCard">
+        <!-- Back interior pocket -->
+        <div class="envelope-back"></div>
+
+        <!-- Hidden Letter that will slide out -->
+        <div class="envelope-letter" id="envelopeLetter">
+          <div class="letter-inner">
+            <div class="letter-folded-content">
+              <span class="letter-top-badge">FOR PURVA'S 20TH</span>
+              <h3 class="letter-mini-title">BIRTHDAY INVITATION</h3>
+              <p class="letter-peek-text">Opening your special invitation... ♡</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flap: Top triangle that flips open with 3D perspective -->
+        <div class="envelope-flap" id="envelopeFlap">
+          <div class="flap-front"></div>
+          <div class="flap-back"></div>
+        </div>
+
+        <!-- Front Pocket Fold: Left, Right and Bottom triangles -->
+        <div class="envelope-pocket">
+          <div class="pocket-left"></div>
+          <div class="pocket-right"></div>
+          <div class="pocket-bottom"></div>
+        </div>
+
+        <!-- The Interactive Wax Seal -->
+        <button id="waxSealBtn" class="wax-seal" aria-label="Break wax seal and open invitation" title="Tap to Break Wax Seal">
+          <!-- Realistic SVG Wax Seal with Fracturable Shards -->
+          <svg class="wax-seal-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="waxGradient" cx="35%" cy="35%" r="65%">
+                <stop offset="0%" stop-color="#FF9BBB"/>
+                <stop offset="35%" stop-color="#E85D88"/>
+                <stop offset="70%" stop-color="#C22F5A"/>
+                <stop offset="100%" stop-color="#801032"/>
+              </radialGradient>
+              <radialGradient id="waxInnerGradient" cx="40%" cy="35%" r="60%">
+                <stop offset="0%" stop-color="#FFB3CB"/>
+                <stop offset="50%" stop-color="#D7406E"/>
+                <stop offset="100%" stop-color="#9E1840"/>
+              </radialGradient>
+              <filter id="waxGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#55081E" flood-opacity="0.45"/>
+              </filter>
+            </defs>
+
+            <!-- Organic melted wax edge with fractured pieces for crack animation -->
+            <g class="wax-seal-body" filter="url(#waxGlow)">
+              <!-- Shard 1: Top-Left -->
+              <path class="seal-shard shard-tl" fill="url(#waxGradient)" d="M 60,60 L 60,8 C 45,7 30,15 20,25 C 10,36 8,50 14,60 Z" />
+              <!-- Shard 2: Top-Right -->
+              <path class="seal-shard shard-tr" fill="url(#waxGradient)" d="M 60,60 L 60,8 C 76,8 90,14 100,26 C 111,38 112,50 106,60 Z" />
+              <!-- Shard 3: Bottom-Right -->
+              <path class="seal-shard shard-br" fill="url(#waxGradient)" d="M 60,60 L 106,60 C 112,72 108,90 96,101 C 84,112 68,113 60,111 Z" />
+              <!-- Shard 4: Bottom-Left -->
+              <path class="seal-shard shard-bl" fill="url(#waxGradient)" d="M 60,60 L 60,111 C 48,112 34,106 23,96 C 11,84 8,72 14,60 Z" />
+              
+              <!-- Inner embossed rim -->
+              <circle class="seal-inner-rim" cx="60" cy="60" r="38" fill="url(#waxInnerGradient)" stroke="#FFE2EC" stroke-opacity="0.35" stroke-width="2" />
+              <circle cx="60" cy="60" r="33" fill="none" stroke="#660A24" stroke-opacity="0.5" stroke-width="1.5" stroke-dasharray="3,2" />
+              
+              <!-- Embossed Monogram / Heart in center -->
+              <g class="seal-monogram" transform="translate(60,60)">
+                <!-- Elegant Embossed Heart -->
+                <path d="M 0, -8 C -11,-22 -24,-4 0,16 C 24,-4 11,-22 0,-8 Z" fill="#FFEAF2" fill-opacity="0.85" filter="drop-shadow(0px 1px 1px #50081C)"/>
+                <!-- Initial 'P' inside the heart -->
+                <text x="0" y="8" font-family="'Playfair Display', serif" font-weight="900" font-size="20" fill="#7E1234" text-anchor="middle">P</text>
+              </g>
+            </g>
+
+            <!-- Crack Lines (initially hidden, flash on click) -->
+            <g class="wax-cracks" id="waxCracks" opacity="0">
+              <path d="M 60,60 L 60,8 M 60,60 L 106,60 M 60,60 L 60,111 M 60,60 L 14,60 M 60,60 L 22,26 M 60,60 L 98,98" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+            </g>
+          </svg>
+
+          <!-- Wax Seal Ripple Glow -->
+          <span class="wax-seal-pulse" aria-hidden="true"></span>
+        </button>
+
+      </div>
+
+      <!-- Instructions underneath the envelope -->
+      <div class="envelope-instructions">
+        <p class="instruction-lead">Someone has a very important invitation for you…</p>
+        <p class="instruction-cta">
+          <span class="cta-handwriting">Tap to open</span> <span class="heart-pulse">♡</span>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================================
+       STAGE 2: THE GRAND REVEAL (2-SECOND STAGGERED ANIMATION)
+       AND THE FIRST FULL-SCREEN INVITATION POSTER
+       ========================================================================= -->
+  <main id="invitationMain" class="invitation-main hidden" aria-label="Purva's 20th Birthday Invitation Poster">
+    
+    <!-- POSTER HERO SECTION (Exact Reference Poster Recreation) -->
+    <section class="poster-hero-section" id="posterHero">
+      <div class="poster-container" id="posterContainer">
+        
+        <!-- Texture Layer & Paper Board -->
+        <div class="poster-board-texture"></div>
+
+        <!-- 0.0 - 0.3s: Top Bunting / Pennants Banner -->
+        <div class="poster-element poster-bunting anim-bunting" data-anim-order="0">
+          <img src="assets/bunting_tight.png" alt="Party Bunting Flags" class="asset-img" loading="eager">
+        </div>
+
+        <!-- 0.0 - 0.3s: Top-Left Pink Disco Ball -->
+        <div class="poster-element poster-disco-tl anim-disco-tl" data-anim-order="1">
+          <img src="assets/top_left_disco_tight.png" alt="Pink Disco Ball" class="asset-img disco-spin" loading="eager">
+          <span class="sparkle-glint glint-1">✧</span>
+        </div>
+
+        <!-- 0.6 - 0.9s: Top-Right Metallic Pink Balloons -->
+        <div class="poster-element poster-balloons-tr anim-balloons" data-anim-order="4">
+          <img src="assets/balloons_top_right_tight.png" alt="Pink Metallic Balloons" class="asset-img balloons-bob" loading="eager">
+        </div>
+
+        <!-- 0.6 - 0.9s: Mid-Right Silver Disco Ball -->
+        <div class="poster-element poster-disco-mr anim-disco-mr" data-anim-order="5">
+          <img src="assets/disco_mid_right_tight.png" alt="Silver Disco Ball" class="asset-img disco-spin-reverse" loading="eager">
+          <span class="sparkle-glint glint-2">✧</span>
+        </div>
+
+        <!-- 0.3 - 0.6s & 0.6 - 0.9s: Glitter Stars & Lipstick Kisses around poster -->
+        <div class="poster-decorations">
+          <!-- Big pink glitter star top left -->
+          <div class="poster-element decor-star-tl anim-star-1" data-anim-order="3">
+            <img src="assets/star_pink_large.png" alt="Glitter Star" class="decor-img sparkle-pulse">
+          </div>
+          <!-- Silver glitter star left -->
+          <div class="poster-element decor-star-sil anim-star-2" data-anim-order="3">
+            <img src="assets/star_silver.png" alt="Silver Glitter Star" class="decor-img sparkle-pulse">
+          </div>
+          <!-- Small pink star right -->
+          <div class="poster-element decor-star-tr anim-star-3" data-anim-order="3">
+            <img src="assets/star_pink_small.png" alt="Pink Star" class="decor-img sparkle-pulse">
+          </div>
+          <!-- Lipstick kiss mark left -->
+          <div class="poster-element decor-kiss-left anim-kiss-1" data-anim-order="3">
+            <img src="assets/kiss_mark.png" alt="Lipstick Kiss" class="decor-img">
+          </div>
+          <!-- Lipstick kiss mark right -->
+          <div class="poster-element decor-kiss-right anim-kiss-2" data-anim-order="3">
+            <img src="assets/kiss_mark.png" alt="Lipstick Kiss" class="decor-img">
+          </div>
+        </div>
+
+        <!-- 0.3 - 0.6s: Childhood Photograph of Purva (Centerpiece) -->
+        <div class="poster-element poster-purva-wrapper anim-purva" data-anim-order="2">
+          <!-- Cutout photo of young Purva with white border -->
+          <div class="purva-photo-frame">
+            <img src="assets/purva_tight.png" alt="Purva childhood photo with retro sunglasses" class="purva-cutout-img">
+            
+            <!-- 0.3 - 0.6s: Pink Birthday Hat perched on her head -->
+            <div class="poster-element purva-hat-wrapper anim-hat" data-anim-order="2">
+              <img src="assets/pink_hat_tight.png" alt="Pink Glitter Birthday Hat" class="purva-hat-img">
+              <span class="hat-sparkle-rays"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 0.9 - 1.2s: Giant Metallic Pink Balloon "20" (Bounce entrance) -->
+        <div class="poster-element poster-balloon-20 anim-number-20" data-anim-order="6">
+          <img src="assets/balloon_20_tight.png" alt="Giant Metallic Pink 20 Balloon" class="asset-img-20">
+          <span class="metallic-sheen" aria-hidden="true"></span>
+        </div>
+
+        <!-- 0.9 - 1.2s: Birthday Cupcake beside photo with glowing candle -->
+        <div class="poster-element poster-cupcake anim-cupcake" data-anim-order="7">
+          <img src="assets/cupcake_tight.png" alt="Birthday Cupcake with Candle" class="asset-cupcake-img">
+          <span class="candle-flame-glow" aria-hidden="true"></span>
+        </div>
+
+        <!-- 1.2 - 1.5s: "BIRTHDAY PARTY" Colorful Scrapbook Cut-out Lettering -->
+        <div class="poster-element poster-scrapbook-title anim-scrapbook-letters" data-anim-order="8" aria-label="BIRTHDAY PARTY">
+          <div class="scrap-word scrap-birthday">
+            <span class="scrap-letter scrap-b" style="--rot: -4deg; --bg: #FEE75C; --color: #C01E2E; --delay: 0.02s;">B</span>
+            <span class="scrap-letter scrap-i" style="--rot: 2deg; --bg: #FFFFFF; --color: #C01E2E; --delay: 0.05s;">I</span>
+            <span class="scrap-letter scrap-r" style="--rot: -2deg; --bg: #A0D8EF; --color: #E63973; --delay: 0.08s;">R</span>
+            <span class="scrap-letter scrap-t" style="--rot: 5deg; --bg: #F8CAD8; --color: #1F1F1F; --delay: 0.11s;">T</span>
+            <span class="scrap-letter scrap-h" style="--rot: -3deg; --bg: #FBA048; --color: #1A1A1A; --delay: 0.14s;">H</span>
+            <span class="scrap-letter scrap-d" style="--rot: 3deg; --bg: #2790D5; --color: #FFFFFF; --delay: 0.17s;">D</span>
+            <span class="scrap-letter scrap-a" style="--rot: -4deg; --bg: #EAE6DF; --color: #1F1F1F; --delay: 0.20s;">A</span>
+            <span class="scrap-letter scrap-y" style="--rot: 2deg; --bg: #FEE75C; --color: #C01E2E; --delay: 0.23s;">Y</span>
+          </div>
+          <div class="scrap-word scrap-party">
+            <span class="scrap-letter scrap-p" style="--rot: -3deg; --bg: #DF2674; --color: #FFFFFF; --delay: 0.26s;">P</span>
+            <span class="scrap-letter scrap-a2" style="--rot: 4deg; --bg: #C5A0DB; --color: #FCE858; --delay: 0.29s;">A</span>
+            <span class="scrap-letter scrap-r2" style="--rot: -2deg; --bg: #F8B4A6; --color: #8C1D2A; --delay: 0.32s;">R</span>
+            <span class="scrap-letter scrap-t2" style="--rot: 2deg; --bg: #D92534; --color: #FFFFFF; --delay: 0.35s;">T</span>
+            <span class="scrap-letter scrap-y2" style="--rot: 4deg; --bg: #223B75; --color: #EA4848; --delay: 0.38s;">Y</span>
+          </div>
+        </div>
+
+        <!-- 1.5 - 1.8s: "for Purva (Poobie)" in Cursive Typography -->
+        <div class="poster-element poster-name-group anim-name" data-anim-order="9">
+          <div class="name-prefix">
+            <span class="heart-doodle">♡</span>
+            <span class="prefix-text">for</span>
+            <span class="heart-doodle">♡</span>
+          </div>
+          <div class="name-display">
+            <span class="name-heart-left">♡</span>
+            <h1 class="celebrant-name">Purva ( Poobie )</h1>
+            <span class="name-heart-right">♡</span>
+          </div>
+          <div class="name-underline-svg" aria-hidden="true">
+            <svg viewBox="0 0 320 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 10,12 Q 90,4 180,11 Q 250,17 310,8" stroke="#E63973" stroke-width="4.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- 1.8 - 2.0s: Event Details (Date, Time, Venue) -->
+        <div class="poster-element poster-details-bar anim-details" data-anim-order="10">
+          <!-- Date -->
+          <div class="detail-item detail-date">
+            <span class="detail-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5C5555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+                <circle cx="8" cy="15" r="1.5" fill="#5C5555"></circle>
+                <circle cx="12" cy="15" r="1.5" fill="#5C5555"></circle>
+                <circle cx="16" cy="15" r="1.5" fill="#5C5555"></circle>
+              </svg>
+            </span>
+            <div class="detail-text">
+              <span class="detail-primary">Nov 17th</span>
+              <span class="detail-secondary">2026</span>
+            </div>
+          </div>
+
+          <div class="detail-divider" aria-hidden="true"></div>
+
+          <!-- Time -->
+          <div class="detail-item detail-time">
+            <span class="detail-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5C5555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </span>
+            <div class="detail-text">
+              <span class="detail-primary">5:30 pm</span>
+            </div>
+          </div>
+
+          <div class="detail-divider" aria-hidden="true"></div>
+
+          <!-- Venue -->
+          <div class="detail-item detail-venue">
+            <span class="detail-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#5C5555" stroke="#5C5555" stroke-width="1.5">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+            </span>
+            <div class="detail-text venue-with-rays">
+              <span class="detail-primary venue-title">Madras Taproom</span>
+              <span class="venue-party-rays">⚡</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1.8 - 2.0s: Pink Satin Ribbon Bow -->
+        <div class="poster-element poster-bow anim-bow" data-anim-order="11">
+          <img src="assets/pink_ribbon_bow_tight.png" alt="Pink Satin Bow" class="bow-img bow-float">
+        </div>
+
+        <!-- 1.8 - 2.0s: Taped Pink Memo: "P.S. PLEASE be on time cuz we have exams 😭" -->
+        <div class="poster-element poster-ps-memo anim-ps-note" data-anim-order="12">
+          <div class="taped-memo-card">
+            <span class="washi-tape-strip" aria-hidden="true"></span>
+            <p class="memo-line-1">P.S. PLEASE be on time</p>
+            <p class="memo-line-2">cuz we have exams <span class="emoji-cry">😭</span></p>
+            <span class="memo-underline"></span>
+          </div>
+        </div>
+
+        <!-- Bottom Corners: Disco balls -->
+        <div class="poster-element poster-disco-bl anim-disco-bl" data-anim-order="5">
+          <img src="assets/disco_bottom_left.png" alt="Silver Disco Balls" class="asset-img">
+        </div>
+        <div class="poster-element poster-disco-br anim-disco-br" data-anim-order="5">
+          <img src="assets/disco_bottom_right.png" alt="Pink Disco Ball" class="asset-img">
+        </div>
+
+      </div>
+
+      <!-- Scroll Invitation Indicator -->
+      <div class="scroll-cue" id="scrollCue">
+        <p class="scroll-cue-text">Scroll down for the drama</p>
+        <div class="scroll-arrow-bounce">↓</div>
+      </div>
+    </section>
+
+
+    <!-- =========================================================================
+         SECTION 5: THE DRAMATIC SECTION — "SAYING NO ISN'T AN OPTION"
+         ========================================================================= -->
+    <section class="scrapbook-section dramatic-section" id="dramaticSection" aria-label="Attendance is Mandatory">
+      <div class="scrapbook-container">
+        
+        <!-- Floating Stickers & Tape Details -->
+        <div class="scrap-sticker sticker-tape-tl" aria-hidden="true"></div>
+        <div class="scrap-sticker sticker-bow-tr" aria-hidden="true">
+          <img src="assets/pink_ribbon_bow_tight.png" alt="Decorative Bow" class="mini-bow">
+        </div>
+        <div class="scrap-sticker sticker-kiss-bl" aria-hidden="true">
+          <img src="assets/kiss_mark.png" alt="Lipstick Kiss" class="mini-kiss">
+        </div>
+        <div class="scrap-sticker sticker-star-br" aria-hidden="true">
+          <img src="assets/star_pink_large.png" alt="Glitter Star" class="mini-star">
+        </div>
+
+        <div class="dramatic-card reveal-on-scroll">
+          <div class="dramatic-stamp">ATTENDANCE STATUS: MANDATORY</div>
+          
+          <h2 class="huge-dramatic-heading">
+            <span class="d-line line-1">SAYING NO</span>
+            <span class="d-line line-2">ISN’T AN OPTION.</span>
+          </h2>
+
+          <div class="dramatic-divider-hearts">
+            <span>♡</span> <span>✦</span> <span>♡</span> <span>✦</span> <span>♡</span>
+          </div>
+
+          <div class="dramatic-body-text">
+            <p class="excuse-item excuse-1">You’re not busy.</p>
+            <p class="excuse-item excuse-2">You’re not tired.</p>
+            <p class="excuse-item excuse-3">You don’t have other plans.</p>
+            <div class="end-of-discussion-box">
+              <span class="discussion-text">You’re coming. End of discussion.</span>
+              <span class="sparkle-accent">✨</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================================================
+         SECTION 6: PERSONAL MESSAGE — "IT'S A BIG DEAL. SHE'S TURNING 20."
+         ========================================================================= -->
+    <section class="scrapbook-section personal-section" id="personalSection" aria-label="Personal Message for Purva">
+      <div class="scrapbook-container">
+        
+        <div class="letter-card reveal-on-scroll">
+          <!-- Washi tape at top -->
+          <div class="washi-tape-header" aria-hidden="true"></div>
+          
+          <div class="letter-stamp-badge">CHAPTER 20</div>
+
+          <h2 class="letter-heading">
+            IT’S A BIG DEAL.<br>
+            <span class="highlight-pink">SHE’S TURNING 20.</span>
+          </h2>
+
+          <div class="letter-paragraphs">
+            <p class="letter-p p-lead">
+              Twenty years of being iconic, dramatic, adorable and occasionally impossible.
+            </p>
+            <p class="letter-p p-middle">
+              And obviously, this milestone deserves a celebration.
+            </p>
+            <div class="handwritten-highlight-box">
+              <p class="letter-p p-closing">
+                So put on something cute, bring your best energy, and come celebrate Poobie! ♡
+              </p>
+            </div>
+          </div>
+
+          <div class="letter-signature-row">
+            <span class="signature-tag">— Team Poobie 🎀</span>
+            <div class="cute-doodles">
+              <span class="doodle-sparkle">★</span>
+              <span class="doodle-heart">♡</span>
+              <span class="doodle-disco">🪩</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================================================
+         SECTION 7: THE IMPORTANT REMINDER — "P.S. PLEASE BE ON TIME"
+         ========================================================================= -->
+    <section class="scrapbook-section reminder-section" id="reminderSection" aria-label="Important Exam Reminder">
+      <div class="scrapbook-container">
+
+        <div class="reminder-paper-note reveal-on-scroll">
+          <!-- Playfully Animated Ribbon Bow on Top -->
+          <div class="note-ribbon-anchor">
+            <img src="assets/pink_ribbon_bow_tight.png" alt="Satin Pink Ribbon" class="note-animated-ribbon">
+          </div>
+
+          <!-- Washi tape edges -->
+          <span class="washi-tape-pin pin-left" aria-hidden="true"></span>
+          <span class="washi-tape-pin pin-right" aria-hidden="true"></span>
+
+          <div class="reminder-content">
+            <div class="urgent-tag">CRITICAL NOTE ⚠️</div>
+            <h3 class="reminder-heading">P.S. PLEASE BE ON TIME.</h3>
+            <p class="reminder-sub">
+              Cuz we have exams <span class="crying-emoji-bounce">😭</span>
+            </p>
+            <div class="exam-disclaimer">
+              (We are literally risking our GPAs for this party, so do NOT show up at 7 PM!)
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================================================================
+         SECTION 8: FINAL SECTION — CONFIRM YOUR PRESENCE (RSVP)
+         ========================================================================= -->
+    <section class="scrapbook-section rsvp-section" id="rsvpSection" aria-label="RSVP Confirmation">
+      <div class="scrapbook-container">
+
+        <div class="rsvp-card reveal-on-scroll">
+          <div class="rsvp-top-badge">FINAL CHECKPOINT</div>
+
+          <h2 class="rsvp-heading">
+            SO… WE’RE SEEING YOU THERE, RIGHT?
+          </h2>
+          <p class="rsvp-subheading">
+            Don’t make us come looking for you.
+          </p>
+
+          <!-- LIVE COUNTDOWN TIMER TO NOV 17, 2026 5:30 PM -->
+          <div class="countdown-widget" id="countdownWidget">
+            <div class="countdown-header">COUNTDOWN TO POOBIE'S 20TH</div>
+            <div class="countdown-tiles">
+              <div class="cd-box"><span class="cd-val" id="cdDays">--</span><span class="cd-lbl">DAYS</span></div>
+              <div class="cd-box"><span class="cd-val" id="cdHours">--</span><span class="cd-lbl">HOURS</span></div>
+              <div class="cd-box"><span class="cd-val" id="cdMins">--</span><span class="cd-lbl">MINS</span></div>
+              <div class="cd-box"><span class="cd-val" id="cdSecs">--</span><span class="cd-lbl">SECS</span></div>
+            </div>
+          </div>
+
+          <!-- THE MAIN CONFIRMATION BUTTON -->
+          <div class="rsvp-action-area">
+            <button id="rsvpConfirmBtn" class="main-rsvp-btn" type="button">
+              <span class="btn-sparkle-left">✨</span>
+              <span class="btn-text">I’m Obviously Coming ♡</span>
+              <span class="btn-sparkle-right">✨</span>
+            </button>
+            <p class="btn-reassurance">One click saves your spot at the table</p>
+          </div>
+
+          <!-- SUCCESS CONFIRMATION MODAL / BANNER (Revealed on click) -->
+          <div id="rsvpSuccessBox" class="rsvp-success-box hidden" role="alert" aria-live="polite">
+            <div class="success-bubble">
+              <span class="success-icon">🎉</span>
+              <h3 class="success-title">THAT’S WHAT WE LIKE TO HEAR!</h3>
+              <p class="success-msg">You have officially made the best decision of your week. Poobie can't wait to see you! ♡</p>
+            </div>
+            
+            <div class="share-actions">
+              <!-- WhatsApp RSVP Button -->
+              <a id="whatsappBtn" class="action-pill-btn whatsapp-pill" target="_blank" rel="noopener noreferrer" href="https://wa.me/?text=Hey%20Purva!%20I%27m%20obviously%20coming%20to%20your%2020th%20birthday%20party%20at%20Madras%20Taproom!%20Wouldn%27t%20miss%20it%20for%20the%20world%20%F0%9F%8E%89%F0%9F%8E%82">
+                <span class="pill-icon">💬</span> Tell Poobie on WhatsApp
+              </a>
+
+              <!-- Add to Calendar Button -->
+              <button id="addToCalBtn" class="action-pill-btn calendar-pill" type="button">
+                <span class="pill-icon">📅</span> Add to Google Calendar
+              </button>
+
+              <!-- Download iCal (.ics) -->
+              <button id="downloadIcsBtn" class="action-pill-btn ics-pill" type="button">
+                <span class="pill-icon">📎</span> Download Apple / iCal Event
+              </button>
+            </div>
+          </div>
+
+          <!-- VENUE & EVENT QUICK INFO RECAP -->
+          <div class="quick-recap-grid">
+            <div class="recap-card">
+              <span class="recap-emoji">📍</span>
+              <div class="recap-text">
+                <strong>Madras Taproom</strong>
+                <a href="https://maps.google.com/?q=Madras+Taproom" target="_blank" rel="noopener" class="map-link">Open in Maps ↗</a>
+              </div>
+            </div>
+            <div class="recap-card">
+              <span class="recap-emoji">⏰</span>
+              <div class="recap-text">
+                <strong>Nov 17th, 2026 @ 5:30 PM</strong>
+                <span>Be punctual, exams ahead!</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- REPLAY EXPERIENCE BUTTON -->
+          <div class="replay-bar">
+            <button id="replayBtn" class="replay-btn" type="button">
+              ↺ Replay Invitation Opening
+            </button>
+          </div>
+
+        </div>
+
+        <!-- FOOTER CREDITS -->
+        <footer class="site-footer">
+          <p class="footer-note">Handcrafted with lots of love, glitter & drama for Purva’s 20th ♡</p>
+        </footer>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CONFETTI CANVAS -->
+  <canvas id="confettiCanvas" class="confetti-canvas" aria-hidden="true"></canvas>
+
+  <!-- SCRIPT -->
+  <script src="js/main.js"></script>
+</body>
+</html>
